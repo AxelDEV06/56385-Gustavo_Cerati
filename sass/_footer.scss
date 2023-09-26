@@ -1,0 +1,81 @@
+/*///////////////////////////////////////////////////////////*/
+/*
+FOOTER SIEMPRE EN EL BOTTOM:
+1- Darle al body un display flex.
+2- Luego un flex direction column para volver a recuperar su forma.
+3- Por úiltimo un min height de 100vh para que siempre ocupe el 100% del alto visible. 
+4- Vamos al footer para aplicarle un margin top auto para que se ajuste automaticamente por debajo.
+*/
+/*FOOTER*/
+#footer {
+    background-color: rgb(160, 160, 160);
+    padding: 0 10% 0 10%; /*PADDING PARA DARLE ESPACIO INTERNO IZQ/DER*/
+    display: flex; /*PROPIEDAD Y VALOR PARA ACOMODAR CAJAS*/
+    justify-content: space-between; /*JUSTIFICAMOS LOS HIJOS DE IZQUIERDA/DERECHA*/
+    align-items: center; /*ALINEAMOS LOS HIJOS DE ARRIBA/ABAJO*/
+    margin-top: auto;
+    width: 100%;
+    backdrop-filter: blur(6px) saturate(143%);
+    -webkit-backdrop-filter: blur(6px) saturate(143%);
+    background-color: rgba(15, 15, 17, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /*EDICIÓN DE LAS 3 BOXES*/
+/*BOX-1*/
+.footer-box1-icon__IMG { /*ICONO CERATI*/
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    }
+}
+
+
+
+
+
+/*BOX-2*/
+.footer__BOX2-LINKS ul li {
+    margin-top: 10px;
+    text-align: center;
+}
+.footer__BOX2-LINKS ul li a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+
+/*BOX-3*/
+.footer__BOX3-INFO { /*CAJA DE INFO PERSONAL*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*INFO: REDES*/
+.footer-box3-info__REDES ul li {
+    display: inline-block;
+}
+.footer-box3-info__REDES ul li a img {
+    width: 50px;
+    height: 50px;
+}
+
+/*INFO PERSONAL: AXEL*/
+.footer-box3-info__PERSONAL { /*CENTRADO FOTO Y PÁRRAFO*/
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-box3-info__PERSONAL img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.footer-box3-info__PERSONAL p {
+    color: white;
+}
+
+@media (max-width:576px) {
+    #footer {
+        flex-direction: column;
+    }
+}

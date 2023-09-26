@@ -1,0 +1,40 @@
+/*RESETEO DE ESTILOS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; CORROBORAR LA BOX DE NUESTRO INDEX*/
+    color: black;
+}
+ul , a {
+    list-style: none;
+    font-style: none;
+    text-decoration: none;
+    transition: .5s;
+}
+
+a:hover {
+    color: black;
+    transition: .5s;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    /* background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight: bold;
+    color: white;
+    margin: 0 10%;
+}
+section {
+    margin-top: 30px;
+    padding: 0 10%;
+}

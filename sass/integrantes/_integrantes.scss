@@ -1,0 +1,91 @@
+/*///////////////////////////////////////////////////////////////////*/
+/*GRILLAS INTEGRANTES*/
+.bio_cerati , .bio_charly{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 50px 300px 50px;
+    grid-auto-rows: minmax(125px, auto);
+    grid-template-areas: 
+    "bio_titulo bio_titulo"
+    "bio_img bio_parrafo"
+    "bio_subtitulo bio_subtitulo"
+    ;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+
+    backdrop-filter: blur(5px) saturate(149%);
+    -webkit-backdrop-filter: blur(5px) saturate(149%);
+    background-color: rgba(17, 25, 40, 0.44);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+    box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+-webkit-box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+-moz-box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+}
+
+.bio_bosio , .bio_tweety {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 50px 300px 50px;
+    grid-auto-rows: minmax(125px, auto);
+    grid-template-areas: 
+    "bio_titulo bio_titulo"
+    "bio_parrafo bio_img "
+    "bio_subtitulo bio_subtitulo"
+    ;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+
+    backdrop-filter: blur(5px) saturate(149%);
+    -webkit-backdrop-filter: blur(5px) saturate(149%);
+    background-color: rgba(17, 25, 40, 0.44);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+    box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+-webkit-box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+-moz-box-shadow: 4px 9px 35px -4px rgba(0,0,0,0.77);
+}
+
+.bio_titulo {
+    grid-area: bio_titulo;
+    text-align: center;
+}
+
+.bio_img {
+    grid-area: bio_img;
+    border-radius: 10px;
+    width: 300px; 
+    height: 300px;
+}
+
+.bio_parrafo {
+    grid-area: bio_parrafo;
+}
+
+.bio_subtitulo {
+    grid-area: bio_subtitulo;
+    text-align: center;
+}
+
+/*RESPONSIVO INTEGRANTES*/
+@media screen and (max-width: 700px) {
+    .bio_cerati , .bio_bosio , .bio_charly , .bio_tweety{
+        grid-template-columns: 400px;
+        grid-template-rows: 50px 300px 300px 50px;
+        grid-template-areas: 
+        "bio_titulo"
+        "bio_img"
+        "bio_parrafo"
+        "bio_subtitulo"
+        ;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .bio_img {
+        margin: 0 auto;
+    }
+}

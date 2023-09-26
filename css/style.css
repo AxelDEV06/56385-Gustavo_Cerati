@@ -1,0 +1,408 @@
+@charset "UTF-8";
+/*IMPORT RESET*/
+/*RESETEO DE ESTILOS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; CORROBORAR LA BOX DE NUESTRO INDEX*/
+  color: black;
+}
+
+ul, a {
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: black;
+  transition: 0.5s;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  /* background-image: url(../images/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  font-family: "Sofia Sans Semi Condensed", sans-serif;
+  font-weight: bold;
+  color: white;
+  margin: 0 10%;
+}
+
+section {
+  margin-top: 30px;
+  padding: 0 10%;
+}
+
+/*IMPORT GENERAL*/
+/*/////////////////////////////////////////////////////////*/
+/*DISPLAY DEL HEADER Y NAV*/
+header {
+  background-color: rgb(121, 63, 63);
+  width: 100%;
+  height: 80px;
+  display: flex; /*CONVERTIMOS EN FLEX EL HEADER PARA PODER ACOMODAR LOS HIJOS */
+  backdrop-filter: blur(6px) saturate(143%);
+  -webkit-backdrop-filter: blur(6px) saturate(143%);
+  background-color: rgba(0, 0, 0, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex; /*FLEX AL NAV PARA ACOMODAR TODOS SUS ELEMENTOS*/
+  align-items: center; /*ALINEACIÓN ARRIBA/ABAJO*/
+  justify-content: space-between; /*ALINEACIÓN IZQ/DER*/
+  width: 100%;
+  margin: 0 5%;
+}
+
+@media (max-width: 700px) {
+  header {
+    height: auto;
+  }
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/*/////////////////////////////////////////////////////////////*/
+/*EDICIÓN DE ICONO Y TÍTULO*/
+.nav__BOX1 { /*CONTENEDOR TITULO E IMG*/
+  display: flex;
+  align-items: center;
+}
+
+.nav-box1__ICONO {
+  width: 55px;
+  height: 60px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.nav-box1__TITULO {
+  font-family: "Tilt Prism", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  color: rgb(133, 156, 175);
+}
+
+/*EDICIÓN DE LISTAS Y SU CONTENIDO*/
+header nav ul {
+  margin: 0;
+}
+
+header nav ul li { /*LISTAS DEL CONTENEDOR UL*/
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header nav ul li a { /*LINKS DENTRO DE LAS LISTAS*/
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+/*///////////////////////////////////////////////////////////*/
+/*
+FOOTER SIEMPRE EN EL BOTTOM:
+1- Darle al body un display flex.
+2- Luego un flex direction column para volver a recuperar su forma.
+3- Por úiltimo un min height de 100vh para que siempre ocupe el 100% del alto visible. 
+4- Vamos al footer para aplicarle un margin top auto para que se ajuste automaticamente por debajo.
+*/
+/*FOOTER*/
+#footer {
+  background-color: rgb(160, 160, 160);
+  padding: 0 10% 0 10%; /*PADDING PARA DARLE ESPACIO INTERNO IZQ/DER*/
+  display: flex; /*PROPIEDAD Y VALOR PARA ACOMODAR CAJAS*/
+  justify-content: space-between; /*JUSTIFICAMOS LOS HIJOS DE IZQUIERDA/DERECHA*/
+  align-items: center; /*ALINEAMOS LOS HIJOS DE ARRIBA/ABAJO*/
+  margin-top: auto;
+  width: 100%;
+  backdrop-filter: blur(6px) saturate(143%);
+  -webkit-backdrop-filter: blur(6px) saturate(143%);
+  background-color: rgba(15, 15, 17, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  /*EDICIÓN DE LAS 3 BOXES*/
+  /*BOX-1*/
+}
+#footer .footer-box1-icon__IMG { /*ICONO CERATI*/
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+/*BOX-2*/
+.footer__BOX2-LINKS ul li {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer__BOX2-LINKS ul li a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+/*BOX-3*/
+.footer__BOX3-INFO { /*CAJA DE INFO PERSONAL*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*INFO: REDES*/
+.footer-box3-info__REDES ul li {
+  display: inline-block;
+}
+
+.footer-box3-info__REDES ul li a img {
+  width: 50px;
+  height: 50px;
+}
+
+/*INFO PERSONAL: AXEL*/
+.footer-box3-info__PERSONAL { /*CENTRADO FOTO Y PÁRRAFO*/
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-box3-info__PERSONAL img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.footer-box3-info__PERSONAL p {
+  color: white;
+}
+
+@media (max-width: 576px) {
+  #footer {
+    flex-direction: column;
+  }
+}
+/*IMPORT INTEGRANTES*/
+/*///////////////////////////////////////////////////////////////////*/
+/*GRILLAS INTEGRANTES*/
+.bio_cerati, .bio_charly {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: 50px 300px 50px;
+  grid-auto-rows: minmax(125px, auto);
+  grid-template-areas: "bio_titulo bio_titulo" "bio_img bio_parrafo" "bio_subtitulo bio_subtitulo";
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  backdrop-filter: blur(5px) saturate(149%);
+  -webkit-backdrop-filter: blur(5px) saturate(149%);
+  background-color: rgba(17, 25, 40, 0.44);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+}
+
+.bio_bosio, .bio_tweety {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: 50px 300px 50px;
+  grid-auto-rows: minmax(125px, auto);
+  grid-template-areas: "bio_titulo bio_titulo" "bio_parrafo bio_img " "bio_subtitulo bio_subtitulo";
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  backdrop-filter: blur(5px) saturate(149%);
+  -webkit-backdrop-filter: blur(5px) saturate(149%);
+  background-color: rgba(17, 25, 40, 0.44);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+}
+
+.bio_titulo {
+  grid-area: bio_titulo;
+  text-align: center;
+}
+
+.bio_img {
+  grid-area: bio_img;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.bio_parrafo {
+  grid-area: bio_parrafo;
+}
+
+.bio_subtitulo {
+  grid-area: bio_subtitulo;
+  text-align: center;
+}
+
+/*RESPONSIVO INTEGRANTES*/
+@media screen and (max-width: 700px) {
+  .bio_cerati, .bio_bosio, .bio_charly, .bio_tweety {
+    grid-template-columns: 400px;
+    grid-template-rows: 50px 300px 300px 50px;
+    grid-template-areas: "bio_titulo" "bio_img" "bio_parrafo" "bio_subtitulo";
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .bio_img {
+    margin: 0 auto;
+  }
+}
+/*//////////////////////////////////////////////////////*/
+/*EDICIÓN BANNER*/
+.portada__IMG {
+  width: 100%;
+  height: 100vh;
+}
+
+/*PARRAFO DESCRIPTIVO*/
+.container-info-portada__p {
+  font-size: 24px;
+  text-align: justify;
+}
+
+/*/////////////////////////////////////////////////////*/
+/*SECTION HIT*/
+.container__HIT-MUSICAL {
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(218, 222, 226, 0.527);
+  border: 1px solid rgba(51, 48, 48, 0.342);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 320px;
+  align-items: center;
+}
+
+.container-hit-musical-box1__H1 {
+  font-family: "Handjet", cursive;
+  font-size: 45px;
+}
+
+.container-hit-musical-box1__P {
+  font-size: 18px;
+}
+
+.container-hit-musical-box1__IMG {
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/*///////////////////////////////////////////////////////////*/
+/*PÁGINA ALBUMES*/
+.container-albumes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.album1 {
+  width: 348px;
+  display: grid;
+  margin: 5px;
+  grid-template-columns: repeat(3, 116px);
+  grid-template-rows: 300px 80px 300px 50px;
+  grid-template-areas: "album-container__img album-container__img album-container__img" "album-container__titulo album-container__titulo album-container__titulo" "album-container__parrafo-canciones album-container__parrafo-canciones album-container__parrafo-canciones" "box-vista1 box-vista2 box-vista3";
+  background-color: rgb(214, 230, 230);
+  border-radius: 15px 15px 0 0;
+  padding-bottom: 10px;
+  backdrop-filter: blur(5px) saturate(149%);
+  -webkit-backdrop-filter: blur(5px) saturate(149%);
+  background-color: rgba(17, 25, 40, 0.44);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  transition: 0.5s;
+}
+
+.album1:hover {
+  box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 4px 9px 35px -4px rgba(0, 0, 0, 0.77);
+  transition: 0.5s;
+}
+
+.album-container__img {
+  grid-area: album-container__img;
+}
+
+.album__img {
+  width: 348px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+/*//////////////////////////////////////////////////////////*/
+.album-container__titulo {
+  grid-area: album-container__titulo;
+  text-align: center;
+}
+
+.album-container__titulo h2 {
+  font-size: 35px;
+}
+
+.album-container__titulo p {
+  font-size: 18px;
+}
+
+/*//////////////////////////////////////////////////////////*/
+.album-container__parrafo-canciones {
+  grid-area: album-container__parrafo-canciones;
+  padding: 0 15px;
+}
+
+.album-container__parrafo-canciones p {
+  text-align: justify;
+}
+
+/*//////////////////////////////////////////////////////////*/
+.box-vista1 {
+  grid-area: box-vista1;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.box-vista2 {
+  grid-area: box-vista2;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.box-vista3 {
+  grid-area: box-vista3;
+  text-align: center;
+}
+
+.album-container__vistas ul li {
+  display: flex;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
